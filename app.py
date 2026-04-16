@@ -40,7 +40,7 @@ with st.expander("📍 Step 1: Tell us about your yard", expanded=True):
     with col2:
         light_level = st.selectbox("Light Level", ["Full Sun", "Part Shade/Dappled", "Deep Shade"])
     
-    under_oaks = st.checkbox("I have large Oak trees in my yard")
+    thriving_plants = st.text_input("What is already growing well in this spot? (e.g. Hostas, Ivy, Moss, etc.)")
 
 recipe_choice = st.selectbox("Step 2: Choose your Vibe (Recipe)", [
     "Dwarf Evergreens (The Winter Flow)", 
