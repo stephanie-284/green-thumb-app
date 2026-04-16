@@ -22,7 +22,7 @@ with st.sidebar:
     st.header("Garden Details")
     zip_code = st.text_input("Zip Code", placeholder="30060")
     light_level = st.selectbox("Sunlight", ["Full Sun", "Partial Shade", "Full Shade"])
-    recipe_choice = st.selectbox("Choose a Style", ["Dwarf Evergreens", "Native Pollinators", "Modern Minimalist"])
+    recipe_choice = st.selectbox("Choose a Style", ["Dwarf Evergreens", "Native Pollinators", "Lush Tropical", "Modern Minimalist"])
     
     # New soil/environment logic replacing the Oak checkbox
     thriving_plants = st.text_input("What is already growing well here?", placeholder="e.g. Ivy, Moss, Azaleas")
