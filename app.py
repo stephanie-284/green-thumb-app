@@ -30,7 +30,7 @@ model = genai.GenerativeModel('gemini-3-flash-preview')
 # Header Section
 st.title("🌿 Green-Thumb")
 st.markdown("### Your 3-Year Garden Sanctuary")
-st.write("Designed for black-thumbs, green-thumbs, and everyone under the oaks.")
+st.write("Designed for black-thumbs, green-thumbs, and everyone in between.")
 
 # 2. Input Canvas
 with st.expander("📍 Step 1: Tell us about your yard", expanded=True):
@@ -55,13 +55,13 @@ if st.button("Generate My Personalized Plan"):
     else:
         with st.spinner("Consulting the horticultural brain..."):
             # The "Horticulture Prompt" Logic
-            oak_context = "The user has large oaks; prioritize acid-loving plants and protect root zones." if under_oaks else ""
+            context = f"The following plants are already thriving here: {thriving_plants}. Use this to infer soil pH and light levels." if under_oaks else ""
             
             prompt = f"""
             Act as an expert ecological landscape designer. 
             Location: Zip Code {zip_code}. Light: {light_level}. Recipe: {recipe_choice}.
             User Goal: Low-maintenance, NO manicured grass, year-round flow. 
-            {oak_context}
+            {context = "Assume standard gardening conditions for this zip code."}
 
             Structure your response with:
             1. **Your Zone:** Identify the USDA Hardiness Zone.
