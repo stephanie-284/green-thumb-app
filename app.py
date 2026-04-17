@@ -32,7 +32,7 @@ st.markdown("""
         color: white;
     }
     </style>
-    """, unsafe_allow_index=True)
+    """, unsafe_allow_html=True)
 
 # 3. SIDEBAR FORM
 with st.sidebar:
