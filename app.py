@@ -16,19 +16,19 @@ model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # 2. The User Interface
 st.title("Yard to Garden Planner")
-st.markdown("### Designing a low-maintenance landscape for your specific yard.")
+st.markdown("### Turn grass and weeds into a low-maintenance oasis for your specific location.")
 
 with st.sidebar:
     st.header("Your Yard Details")
-    zip_code = st.text_input("Zip Code", placeholder="30060")
-    light_level = st.selectbox("Sunlight", ["Full Sun", "Partial Shade", "Full Shade"])
+    zip_code = st.text_input("Zip Code", placeholder="xxxxx")
+    light_level = st.selectbox("Light", ["Full Sun", "Part Sun / Part Shade", "Full Shade"])
     recipe_choice = st.selectbox("Choose a Style", ["Dwarf Evergreens", "Native Pollinators", "Lush Tropical", "Modern Minimalist"])
     
     # New soil/environment logic replacing the Oak checkbox
-    thriving_plants = st.text_input("What is already growing well here?", placeholder="e.g. Ivy, Moss, Azaleas")
+    thriving_plants = st.text_input("What is growing well here now?", placeholder="e.g. Ivy, Moss, Azaleas")
 
 # 3. The Logic Engine
-if st.button("Generate My Personalized Plan"):
+if st.button("Create My Garden Oasis Plan"):
     if not zip_code:
         st.warning("Please enter a zip code to get started.")
     else:
@@ -62,4 +62,4 @@ if st.button("Generate My Personalized Plan"):
                 st.error(f"Something went wrong: {e}")
 
 st.markdown("---")
-st.caption("Built for Marietta gardeners and beyond. No grass, no stress.")
+st.caption("Built for those who want a low-maintenance garden, not a high-maintenance yard.")
