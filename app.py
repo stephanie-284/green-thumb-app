@@ -21,13 +21,17 @@ model = genai.GenerativeModel('gemini-3-flash-preview')
 # 2. UI STYLING (The "First Round" of UI)
 st.markdown("""
     <style>
+    /* 1. Import the font from Google */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+
+    /* 2. Apply it to the headers */
+    h1, h2, h3 {
+        font-family: 'DM Serif Text', serif;
+        color: #1b5e20; /* That deep garden green */
+    }
     .main {
         background-color: #f5f7f1;
     }
-    h1 {
-    font-family: 'DM Serif Text', Georgia, serif;
-    color: #1b5e20;
-}
     .stButton>button {
         width: 100%;
         border-radius: 20px;
