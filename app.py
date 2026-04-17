@@ -2,7 +2,7 @@ import streamlit as st
 import google.generativeai as genai
 
 # 1. Setup and Security
-st.set_page_config(page_title="Green-Thumb Garden Planner", page_icon="🌿")
+st.set_page_config(page_title="Yard to Garden Planner")
 
 # Accessing the secret key we set up
 try:
@@ -19,7 +19,7 @@ st.title("🌿 Green-Thumb Garden Planner")
 st.markdown("### Designing a low-maintenance landscape for your specific yard.")
 
 with st.sidebar:
-    st.header("Garden Details")
+    st.header("Your Yard Details")
     zip_code = st.text_input("Zip Code", placeholder="30060")
     light_level = st.selectbox("Sunlight", ["Full Sun", "Partial Shade", "Full Shade"])
     recipe_choice = st.selectbox("Choose a Style", ["Dwarf Evergreens", "Native Pollinators", "Lush Tropical", "Modern Minimalist"])
