@@ -24,6 +24,10 @@ st.markdown("""
     .main {
         background-color: #f5f7f1;
     }
+    h1 {
+    font-family: 'DM Serif Text', Georgia, serif;
+    color: #1b5e20;
+}
     .stButton>button {
         width: 100%;
         border-radius: 20px;
@@ -51,7 +55,7 @@ with st.sidebar:
         submit_button = st.form_submit_button("Create My Garden Plan")
 
 # 4. MAIN CONTENT AREA
-st.title("🌿 Your Personal Landscape Architect")
+st.title("🌿 Your Personal Garden Designer")
 st.write("Enter your yard's details on the left to see your 3-year transformation plan.")
 
 if submit_button:
