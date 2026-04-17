@@ -20,35 +20,36 @@ model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # 2. UI STYLING (The "First Round" of UI)
 st.markdown("""
-<style>
-    /* Import both fonts from Google */
+    <style>
+    /* 1. Import both fonts from Google */
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Montserrat:wght@300;400;600&display=swap');
 
-    /* 1. Apply DM Serif to Headings */
-    h1, h2, h3 {
-        font-family: 'DM Serif Text', serif;
-        color: #1b5e20;
+    /* 2. FORCE DM Serif onto all header types */
+    h1, h2, h3, h4, h5, h6, .st-emotion-cache-10trblm {
+        font-family: 'DM Serif Text', serif !important;
+        color: #1b5e20 !important;
+        font-weight: 400 !important;
     }
 
-    /* 2. Apply Montserrat to the rest of the App Body */
-    html, body, [class*="st-"] {
-        font-family: 'Montserrat', sans-serif;
+    /* 3. Apply Montserrat to everything else */
+    html, body, [class*="st-"], .stMarkdown p {
+        font-family: 'Montserrat', sans-serif !important;
     }
 
     .main {
         background-color: #f5f7f1;
     }
 
-    /* 3. Apply Montserrat to the Button and give it a bit of "weight" */
+    /* 4. Button styling */
     .stButton>button {
         width: 100%;
         border-radius: 20px;
         height: 3em;
         background-color: #2e7d32;
         color: white;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600; /* Makes the button text pop */
-        letter-spacing: 1px; /* Gives it a modern look */
+        font-family: 'Montserrat', sans-serif !important;
+        font-weight: 600;
+        letter-spacing: 1px;
     }
     </style>
     """, unsafe_allow_html=True)
