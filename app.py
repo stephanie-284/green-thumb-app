@@ -15,7 +15,7 @@ except:
 model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # 2. The User Interface
-st.title("🌿 Green-Thumb Garden Planner")
+st.title("Yard to Garden Planner")
 st.markdown("### Designing a low-maintenance landscape for your specific yard.")
 
 with st.sidebar:
