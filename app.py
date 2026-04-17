@@ -20,24 +20,35 @@ model = genai.GenerativeModel('gemini-3-flash-preview')
 
 # 2. UI STYLING (The "First Round" of UI)
 st.markdown("""
-    <style>
-    /* 1. Import the font from Google */
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+<style>
+    /* Import both fonts from Google */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Montserrat:wght@300;400;600&display=swap');
 
-    /* 2. Apply it to the headers */
+    /* 1. Apply DM Serif to Headings */
     h1, h2, h3 {
         font-family: 'DM Serif Text', serif;
-        color: #1b5e20; /* That deep garden green */
+        color: #1b5e20;
     }
+
+    /* 2. Apply Montserrat to the rest of the App Body */
+    html, body, [class*="st-"] {
+        font-family: 'Montserrat', sans-serif;
+    }
+
     .main {
         background-color: #f5f7f1;
     }
+
+    /* 3. Apply Montserrat to the Button and give it a bit of "weight" */
     .stButton>button {
         width: 100%;
         border-radius: 20px;
         height: 3em;
         background-color: #2e7d32;
         color: white;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600; /* Makes the button text pop */
+        letter-spacing: 1px; /* Gives it a modern look */
     }
     </style>
     """, unsafe_allow_html=True)
