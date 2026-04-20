@@ -26,7 +26,7 @@ st.markdown("""
 
     /* 2. Sidebar General Styling */
     [data-testid="stSidebar"] {
-        background-color: #1b5e20 !important;
+        background-color: #3c5349 !important;
         color: #fffcf8 !important;
     }
 
@@ -82,7 +82,7 @@ st.markdown("""
     }
     
     .stButton>button:hover {
-        background-color: #fffcf8 !important;
+        background-color: #f7f0df !important;
         color: #1b5e20 !important;
     }
     </style>
