@@ -18,38 +18,72 @@ except:
 
 model = genai.GenerativeModel('gemini-3-flash-preview')
 
-# 2. UI STYLING (The "First Round" of UI)
+# 2. UI STYLING (The "Vibecode" Update)
 st.markdown("""
     <style>
-    /* 1. Import both fonts from Google */
+    /* 1. Import Fonts */
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&family=Montserrat:wght@300;400;600&display=swap');
 
-    /* 2. FORCE DM Serif onto all header types */
-    h1, h2, h3, h4, h5, h6, .st-emotion-cache-10trblm {
-        font-family: 'DM Serif Text', serif !important;
-        color: #1b5e20 !important;
-        font-weight: 400 !important;
+    /* 2. Sidebar General Styling */
+    [data-testid="stSidebar"] {
+        background-color: #1b5e20 !important;
+        color: #fffcf8 !important;
     }
 
-    /* 3. Apply Montserrat to everything else */
-    html, body, [class*="st-"], .stMarkdown p {
+    /* Headlines in Sidebar */
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #ffffff !important;
+        font-family: 'DM Serif Text', serif !important;
+    }
+
+    /* Sidebar Copy Text */
+    [data-testid="stSidebar"] p, [data-testid="stSidebar"] label {
+        color: #fffcf8 !important;
         font-family: 'Montserrat', sans-serif !important;
     }
 
-    .main {
-        background-color: #f5f7f1;
+    /* 3. Remove Form Outline & Line */
+    [data-testid="stForm"] {
+        border: none !important;
+        padding: 0 !important;
+    }
+    hr {
+        display: none !important; /* Removes the line under the title */
     }
 
-    /* 4. Button styling */
+    /* 4. Make Sidebar Form Sticky */
+    [data-testid="stSidebarUserContent"] {
+        padding-top: 1rem !important;
+    }
+    
+    /* This targets the form container to stay at the top */
+    div[data-testid="stVerticalBlock"] > div:has(form) {
+        position: sticky !important;
+        top: 2rem !important;
+        z-index: 999;
+    }
+
+    /* 5. Main Content Headers */
+    h1, h2, h3 {
+        font-family: 'DM Serif Text', serif !important;
+        color: #1b5e20 !important;
+    }
+
+    /* 6. Button Styling */
     .stButton>button {
         width: 100%;
         border-radius: 20px;
         height: 3em;
-        background-color: #2e7d32;
-        color: white;
+        background-color: #ffffff !important;
+        color: #1b5e20 !important;
         font-family: 'Montserrat', sans-serif !important;
         font-weight: 600;
-        letter-spacing: 1px;
+        border: none !important;
+    }
+    
+    .stButton>button:hover {
+        background-color: #fffcf8 !important;
+        color: #1b5e20 !important;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -57,8 +91,7 @@ st.markdown("""
 # 3. SIDEBAR FORM
 with st.sidebar:
     st.image("https://www.gstatic.com/images/branding/product/2x/photos_96dp.png", width=100) # Placeholder for a logo
-    st.title("Green-Thumb")
-    st.markdown("---")
+    st.title("Your Current Yard")
     
     # Using a form prevents the app from refreshing every time you type a letter
     with st.form("garden_form"):
